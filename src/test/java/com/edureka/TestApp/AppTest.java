@@ -27,7 +27,7 @@ public class AppTest
         driver.get("http://localhost:8080/helloedureka");
         
 		
-	    String text = "Hello from Edureka";
+	    String text = "Hello from Edueka";
 	    
 	    int l = text.length();
 
