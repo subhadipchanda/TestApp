@@ -55,7 +55,7 @@ public class AppTest
         
         Thread.sleep(5000);
         
-	    String text = "Hello from Edureka";
+	    String text = "Hello Edureka";
 	    
 	    int l = text.length();
 
