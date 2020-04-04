@@ -14,8 +14,28 @@ import org.testng.annotations.Test;
 public class AppTest 
 {
     
-    @Test
-	void testHelloEdureka() throws Exception  {
+	
+	void testGoogle() throws Exception  {
+		
+	    System.setProperty("webdriver.gecko.driver","/home/edureka/Downloads/geckodriver");
+	    
+	    WebDriver driver = new FirefoxDriver();
+	    
+	    driver.get("http://localhost:8080/helloedureka");
+	    
+	    Thread.sleep(5000);
+	    
+        WebElement mytext = driver.findElement(By.xpath("/html/body/h3"));
+	    
+	    System.out.println(mytext.getText());
+	    
+	    driver.quit();
+	    
+	}
+	
+	
+	@Test
+    void testHelloEdureka() throws Exception  {
 		
 	    WebDriver driver;
 	    
@@ -27,7 +47,7 @@ public class AppTest
         
         System.setProperty("webdriver.gecko.driver",mygecko);
         
-        driver = new FirefoxDriver(options);
+        driver = new FirefoxDriver();
         
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
