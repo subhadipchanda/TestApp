@@ -18,7 +18,8 @@ public class AppTest
 	void testGoogle() throws Exception  {
 		
 	    String mygecko = System.getenv("HOME") + "/Downloads/geckodriver";
-		
+	    System.out.println(mygecko);
+	    
 	    System.setProperty("webdriver.gecko.driver",mygecko);
 	    
 	    WebDriver driver = new FirefoxDriver();
