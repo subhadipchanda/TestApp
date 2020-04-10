@@ -15,50 +15,36 @@ public class AppTest
 {
     
 	
-	void testGoogle() throws Exception  {
-		
-	    String mygecko = System.getenv("HOME") + "/Downloads/geckodriver";
-	    System.out.println(mygecko);
-	    
-	    System.setProperty("webdriver.gecko.driver",mygecko);
-	    
-	    WebDriver driver = new FirefoxDriver();
-	    
-	    driver.get("http://localhost:8080/helloedureka");
-	    
-	    Thread.sleep(5000);
-	    
-        WebElement mytext = driver.findElement(By.xpath("/html/body/h3"));
-	    
-	    System.out.println(mytext.getText());
-	    
-	    driver.quit();
-	    
-	}
-	
-	
-	@Test
+    @Test
     void testHelloEdureka() throws Exception  {
 		
-	    WebDriver driver;
+	WebDriver driver;
 	    
-	    FirefoxOptions options = new FirefoxOptions();
+	FirefoxOptions options = new FirefoxOptions();
         
         options.addArguments("--headless");
 	    
         String mygecko=System.getenv("HOME") + "/Downloads/geckodriver";
-        
+
+	System.out.println("Opening http://master:8080/helloedureka");
+
+	System.out.println(mygecko);
+
         System.setProperty("webdriver.gecko.driver",mygecko);
         
-        driver = new FirefoxDriver();
+        driver = new FirefoxDriver(options);
         
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 
-        driver.get("http://localhost:8080/helloedureka");
+	System.out.println("Opening http://master:8080/helloedureka");
+
+	// You may need to change it to IP if it does not work
+
+        driver.get("http://master:8080/helloedureka");
         
         Thread.sleep(5000);
         
-	    String text = "Hello Edureka";
+	    String text = "Hello from Edureka";
 	    
 	    int l = text.length();
 
