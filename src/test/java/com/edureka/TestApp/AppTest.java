@@ -26,7 +26,7 @@ public class AppTest
 	    
         String mygecko=System.getenv("HOME") + "/Downloads/geckodriver";
 
-	System.out.println("Opening http://master:8080/helloedureka");
+	System.out.println("Opening http://localhost:8080/helloedureka");
 
 	System.out.println(mygecko);
 
@@ -36,11 +36,11 @@ public class AppTest
         
         driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 
-	System.out.println("Opening http://master:8080/helloedureka");
+	System.out.println("Opening http://localhost:8080/helloedureka");
 
-	// You may need to change it to IP if it does not work
+	// You will need to change localhost to IP in case of AWS
 
-        driver.get("http://master:8080/helloedureka");
+        driver.get("http://localhost:8080/helloedureka");
         
         Thread.sleep(5000);
         
