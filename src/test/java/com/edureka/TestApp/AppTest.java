@@ -64,7 +64,7 @@ public class AppTest
 	    
         String col_message = "Expected bgcolor to be Aqua but found " + mycolor;
 	    
-	    Assert.assertEquals(mycolor, "Aqua", col_message);
+	    Assert.assertEquals(mycolor, "Aqua");
         
         driver.quit();
 	}
