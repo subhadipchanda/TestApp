@@ -53,13 +53,19 @@ public class AppTest
 	    String bodyText = driver.findElement(By.tagName("body")).getText();
 
 	    System.out.println("bgcolor: " + driver.findElement(By.tagName("body")).getAttribute("bgcolor"));
-        
+       
 	    Assert.assertEquals(bodyText.substring(0, l),text, message);
         
 	    WebElement mytext = driver.findElement(By.xpath("/html/body/h3"));
 	    
 	    System.out.println(mytext.getText());
 	    
+        String mycolor = driver.findElement(By.tagName("body")).getAttribute("bgcolor");
+	    
+        String col_message = "Expected bgcolor to be Green but found " + mycolor;
+	    
+	    Assert.assertEquals(mycolor,"Green", col_message);
+        
         driver.quit();
 	}
 
