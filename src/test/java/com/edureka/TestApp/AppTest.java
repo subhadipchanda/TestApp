@@ -32,6 +32,9 @@ public class AppTest
 
         System.setProperty("webdriver.gecko.driver",mygecko);
         
+        System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE,"true");
+        System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE,"/dev/null");
+        
         driver = new FirefoxDriver(options);
         
         driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
