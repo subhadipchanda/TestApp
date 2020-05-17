@@ -62,9 +62,9 @@ public class AppTest
 	    
         String mycolor = driver.findElement(By.tagName("body")).getAttribute("bgcolor");
 	    
-        String col_message = "Expected bgcolor to be Green but found " + mycolor;
+        String col_message = "Expected bgcolor to be Aqua but found " + mycolor;
 	    
-	    Assert.assertEquals(mycolor,"Green", col_message);
+	    Assert.assertEquals(mycolor, "Aqua", col_message);
         
         driver.quit();
 	}
