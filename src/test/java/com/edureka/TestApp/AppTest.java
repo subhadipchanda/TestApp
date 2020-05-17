@@ -18,17 +18,17 @@ public class AppTest
     @Test
     void testHelloEdureka() throws Exception  {
 		
-	WebDriver driver;
+	    WebDriver driver;
 	    
-	FirefoxOptions options = new FirefoxOptions();
+	    FirefoxOptions options = new FirefoxOptions();
         
         options.addArguments("--headless");
 	    
         String mygecko=System.getenv("HOME") + "/Downloads/geckodriver";
 
-	    System.out.println("Opening http://34.72.56.228:9090/helloedureka");
+	    //System.out.println("Opening http://34.72.56.228:9090/helloedureka");
 
-	    System.out.println(mygecko);
+	    //System.out.println(mygecko);
 
         System.setProperty("webdriver.gecko.driver",mygecko);
         
