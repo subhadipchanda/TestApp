@@ -26,7 +26,7 @@ public class AppTest
 	    
         String mygecko=System.getenv("HOME") + "/Downloads/geckodriver";
 
-	System.out.println("Opening http://localhost:8080/helloedureka");
+	System.out.println("Opening http://34.72.56.228:9090/helloedureka");
 
 	System.out.println(mygecko);
 
@@ -36,11 +36,11 @@ public class AppTest
         
         driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 
-	System.out.println("Opening http://localhost:8080/helloedureka");
+	System.out.println("Opening http://34.72.56.228:9090/helloedureka");
 
 	// You will need to change localhost to IP in case of AWS
 
-        driver.get("http://localhost:8080/helloedureka");
+        driver.get("http://34.72.56.228:9090/helloedureka");
         
         Thread.sleep(5000);
         
@@ -52,7 +52,7 @@ public class AppTest
 	    
 	    String bodyText = driver.findElement(By.tagName("body")).getText();
 
-	    //System.out.println("Body: " + bodyText.substring(0, l ) + ".");
+	    System.out.println("bgcolor: " + driver.findElement(By.tagName("body")).getAttribute("bgcolor"));
         
 	    Assert.assertEquals(bodyText.substring(0, l),text, message);
         
