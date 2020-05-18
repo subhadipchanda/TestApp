@@ -3,7 +3,6 @@ package com.edureka.TestApp;
 import java.io.FileInputStream;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,9 +12,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class AppTest 
-{
-    
-	
+{    	
     @Test
     void testHelloEdureka() throws Exception  {
 		
@@ -35,10 +32,6 @@ public class AppTest
 	    
         String mygecko=System.getenv("HOME") + "/Downloads/geckodriver";
 
-	    //System.out.println("Opening http://34.72.56.228:9090/helloedureka");
-
-	    //System.out.println(mygecko);
-
         System.setProperty("webdriver.gecko.driver",mygecko);
         
         System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE,"true");
@@ -50,18 +43,17 @@ public class AppTest
 
 	    System.out.println("Opening " + myURL);
 
-	    // You will need to change localhost to IP in case of AWS
-
         driver.get(myURL);
         
         Thread.sleep(5000);
         
-	    String text = "Hello from Edureka";
-	    int l = text.length();
+	    //String text = "Hello from Edureka";
+	    String text = prop.getProperty("exp_text");
+	    int len = text.length();
         //String message = "Expected String " + text +  " not found";
         String bodyText = driver.findElement(By.tagName("body")).getText();
         
-	    Assert.assertEquals(bodyText.substring(0, l),text);
+	    Assert.assertEquals(bodyText.substring(0, len),text);
         
 	    WebElement mytext = driver.findElement(By.xpath("/html/body/h3"));
 	    
