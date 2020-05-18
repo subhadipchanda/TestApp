@@ -1,6 +1,7 @@
 package com.edureka.TestApp;
 
-import java.io.IOException;
+import java.io.FileInputStream;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -19,6 +20,14 @@ public class AppTest
     void testHelloEdureka() throws Exception  {
 		
 	    WebDriver driver;
+	    
+	    Properties prop = new Properties();
+	    FileInputStream f = new FileInputStream("./data.properties");
+	    prop.load(f);
+	    String myIP = prop.getProperty("public_ip");
+	    String myPort = prop.getProperty("tomcat_port");
+	    String myAppName = prop.getProperty("app_name");
+	    String myURL = "http://" + myIP + ":" + myPort + "/" + myAppName;
 	    
 	    FirefoxOptions options = new FirefoxOptions();
         
@@ -39,7 +48,7 @@ public class AppTest
         
         driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 
-	    System.out.println("Opening http://34.72.56.228:9090/helloedureka");
+	    System.out.println("Opening " + myURL);
 
 	    // You will need to change localhost to IP in case of AWS
 
