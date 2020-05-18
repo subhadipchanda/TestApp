@@ -52,7 +52,7 @@ public class AppTest
 
 	    // You will need to change localhost to IP in case of AWS
 
-        driver.get("http://34.72.56.228:9090/helloedureka");
+        driver.get(myURL);
         
         Thread.sleep(5000);
         
