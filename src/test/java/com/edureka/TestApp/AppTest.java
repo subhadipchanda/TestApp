@@ -47,21 +47,19 @@ public class AppTest
         
         Thread.sleep(5000);
         
-	    //String text = "Hello from Edureka";
 	    String text = prop.getProperty("exp_text");
 	    int len = text.length();
-        //String message = "Expected String " + text +  " not found";
-        String bodyText = driver.findElement(By.tagName("body")).getText();
+
+        //String bodyText = driver.findElement(By.tagName("body")).getText();
+        String bodyText = driver.findElement(By.xpath("/html/body/h1")).getText();
         
 	    Assert.assertEquals(bodyText.substring(0, len),text);
         
-	    WebElement mytext = driver.findElement(By.xpath("/html/body/h3"));
+	    //WebElement mytext = driver.findElement(By.xpath("/html/body/h3"));
 	    
-	    System.out.println(mytext.getText());
+	    //System.out.println(mytext.getText());
 	    
         String mycolor = driver.findElement(By.tagName("body")).getAttribute("bgcolor");
-	    
-        //String col_message = "Expected bgcolor to be Aqua but found " + mycolor;
 	    
 	    Assert.assertEquals(mycolor, "Aqua");
         
