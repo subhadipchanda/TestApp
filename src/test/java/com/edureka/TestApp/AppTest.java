@@ -30,7 +30,8 @@ public class AppTest
         
         options.addArguments("--headless");
 	    
-        String mygecko=System.getenv("HOME") + "/Downloads/geckodriver";
+        //String mygecko=System.getenv("HOME") + "/Downloads/geckodriver";
+        String mygecko= prop.getProperty("webdriver_path") + "geckodriver";
 
         System.setProperty("webdriver.gecko.driver",mygecko);
         
