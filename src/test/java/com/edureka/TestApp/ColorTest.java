@@ -11,10 +11,10 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AppTest 
+public class ColorTest 
 {    	
     @Test
-    void testHelloEdurekaText() throws Exception  {
+    void testSiteColor() throws Exception  {
 		
 	    WebDriver driver;
 	    
@@ -48,16 +48,16 @@ public class AppTest
         
         Thread.sleep(5000);
         
-	    String text = prop.getProperty("exp_text");
-	    int len = text.length();
+	    //String text = prop.getProperty("exp_text");
+	    //int len = text.length();
 
-        String bodyText = driver.findElement(By.xpath("/html/body/h1")).getText();
+        //String bodyText = driver.findElement(By.xpath("/html/body/h1")).getText();
         
-	    Assert.assertEquals(bodyText.substring(0, len),text);
+	    //Assert.assertEquals(bodyText.substring(0, len),text);
         
-        //String mycolor = driver.findElement(By.tagName("body")).getAttribute("bgcolor");
+        String mycolor = driver.findElement(By.tagName("body")).getAttribute("bgcolor");
 	    
-	    //Assert.assertEquals(mycolor, "Aqua");
+	    Assert.assertEquals(mycolor, "Aqua");
         
         driver.quit();
 	}
