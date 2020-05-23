@@ -51,7 +51,7 @@ public class AppTest
 	    String text = prop.getProperty("exp_text");
 	    int len = text.length();
 
-        String bodyText = driver.findElement(By.xpath("/html/body/h1")).getText();
+        String bodyText = driver.findElement(By.xpath("/html/body/h3")).getText();
         
 	    Assert.assertEquals(bodyText.substring(0, len),text);
         
