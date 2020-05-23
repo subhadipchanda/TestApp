@@ -24,8 +24,13 @@ public class ColorTest
 	    String myIP = prop.getProperty("public_ip");
 	    String myPort = prop.getProperty("tomcat_port");
 	    String myAppName = prop.getProperty("app_name");
+
+	    if(System.getenv("MY_IP")!=null){
+		    myIP=System.getenv("MY_IP");
+	    }
 	    String myURL = "http://" + myIP + ":" + myPort + "/" + myAppName;
-	    
+	    System.out.println("Opening URL " + myURL);
+
 	    FirefoxOptions options = new FirefoxOptions();
         
             options.addArguments("--headless");
