@@ -28,37 +28,29 @@ public class ColorTest
 	    
 	    FirefoxOptions options = new FirefoxOptions();
         
-        options.addArguments("--headless");
+            options.addArguments("--headless");
 	    
-        //String mygecko=System.getenv("HOME") + "/Downloads/geckodriver";
-        String mygecko= prop.getProperty("webdriver_path") + "geckodriver";
+            String mygecko= prop.getProperty("webdriver_path") + "geckodriver";
 
-        System.setProperty("webdriver.gecko.driver",mygecko);
+            System.setProperty("webdriver.gecko.driver",mygecko);
         
-        System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE,"true");
-        System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE,"/dev/null");
+            System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE,"true");
+            System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE,"/dev/null");
         
-        driver = new FirefoxDriver(options);
+            driver = new FirefoxDriver(options);
         
-        driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 
 	    System.out.println("Opening " + myURL);
 
-        driver.get(myURL);
+            driver.get(myURL);
         
-        Thread.sleep(5000);
+            Thread.sleep(5000);
         
-	    //String text = prop.getProperty("exp_text");
-	    //int len = text.length();
-
-        //String bodyText = driver.findElement(By.xpath("/html/body/h1")).getText();
-        
-	    //Assert.assertEquals(bodyText.substring(0, len),text);
-        
-        String mycolor = driver.findElement(By.tagName("body")).getAttribute("bgcolor");
+            String mycolor = driver.findElement(By.tagName("body")).getAttribute("bgcolor");
 	    
 	    Assert.assertEquals(mycolor, "Aqua");
         
-        driver.quit();
+            driver.quit();
 	}
 }
