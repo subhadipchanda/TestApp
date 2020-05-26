@@ -51,15 +51,10 @@ public class CalcTest
 	    String text = prop.getProperty("exp_text");
 	    int len = text.length();
 
-        String bodyText = driver.findElement(By.xpath("/html/body/")).getText();
-        
-        System.out.println("bodyText is " + bodyText);
-        
+        String bodyText = driver.findElement(By.xpath("/html/body")).getText();
+       
+        System.out.println(bodyText);
 	    //Assert.assertEquals(bodyText.substring(0, len),text);
-        
-        //String mycolor = driver.findElement(By.tagName("body")).getAttribute("bgcolor");
-	    
-	    //Assert.assertEquals(mycolor, "Aqua");
         
         driver.quit();
 	}
