@@ -24,8 +24,8 @@ public class CalcTest
 	    String myIP = prop.getProperty("public_ip");
 	    String myPort = prop.getProperty("tomcat_port");
 	    String myAppName = prop.getProperty("app_name");
-	    //String myURL = "http://" + myIP + ":" + myPort + "/" + myAppName;
-	    String myURL = "http://35.226.154.148:9090/calculator/";
+	    String myURL = "http://" + myIP + ":" + myPort + "/" + myAppName;
+	    //String myURL = "http://35.226.154.148:9090/calculator/";
 	    FirefoxOptions options = new FirefoxOptions();
         
         options.addArguments("--headless");
