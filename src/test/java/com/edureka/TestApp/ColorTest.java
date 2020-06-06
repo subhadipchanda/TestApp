@@ -54,7 +54,7 @@ public class ColorTest
         
             String mycolor = driver.findElement(By.tagName("body")).getAttribute("bgcolor");
 	    
-	    Assert.assertEquals(mycolor, "Aqua");
+	    Assert.assertEquals(mycolor, "Red");
         
             driver.quit();
 	}
