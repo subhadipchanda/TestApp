@@ -33,7 +33,7 @@ public class ColorTest
 
 	    FirefoxOptions options = new FirefoxOptions();
         
-            options.addArguments("--headless");
+//            options.addArguments("--headless");
 	    
             String mygecko= prop.getProperty("webdriver_path") + "geckodriver";
 
